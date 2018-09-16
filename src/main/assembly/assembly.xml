@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<assembly>
+    <id>assembly</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources</directory>
+            <outputDirectory>/executecontrol/conf</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/conf</directory>
+            <outputDirectory>/executecontrol/conf</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/bin</directory>
+            <outputDirectory>/executecontrol/bin</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/target/executecontrol-*.jar</directory>
+            <outputDirectory>/executecontrol/lib</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/executecontrol/lib</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+            <scope>runtime</scope>
+        </dependencySet>
+    </dependencySets>
+</assembly>
